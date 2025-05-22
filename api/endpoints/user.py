@@ -7,6 +7,7 @@ from services.user_service import create_user, login_user
 
 user_router = APIRouter()
 
+
 @user_router.post("/users", response_model=UserCreate, status_code=201, tags=['Auth'])
 async def register_user(user: UserCreate, db: Session = Depends(get_db)):
     try:
