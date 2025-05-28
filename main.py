@@ -1,15 +1,14 @@
-import asyncio
-import os
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
 from api.endpoints.user import user_router
 from api.endpoints.consultas import consulta_router
+from api.endpoints.diagnostico import diagnostico_router
 from fastapi.middleware.cors import CORSMiddleware
 
 
 routes = [
     user_router,
-    consulta_router
+    consulta_router,
+    diagnostico_router
     ]
 
 app = FastAPI()
